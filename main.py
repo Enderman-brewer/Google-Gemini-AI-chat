@@ -2,6 +2,9 @@ import os
 
 import google.generativeai as genai
 
+
+gemini_api_key = 'YOUR_API_KEY'
+
 zdebug = False
 
 
@@ -63,9 +66,11 @@ if zdebug:
 try:
   apikey = os.environ['GOOGLE_AI_API_KEY']
 except KeyError:
-  print("No API key found. Please set the GOOGLE_API_KEY environment variable.")
-  apikey = input("Please enter Google API key: ")
-  
+  print("No API key found. Using input")
+  apikey = gemini_api_key
+  if apikey = 'YOUR_API_KEY':
+    input("Please add an API key, to add it in the terminal, just run something along the lines of 'python main.py GOOGLE_AI_API_KEY=YOUR_KEY_HERE', I dunno, I don't play with that, you can also change the gemini_api_key on line 6.")
+    exit()
 genai.configure(api_key=apikey)
 
 
